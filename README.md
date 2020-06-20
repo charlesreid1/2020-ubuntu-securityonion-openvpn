@@ -5,7 +5,6 @@ a copy of all traffic to and from the monitored machine via an OpenVPN connectio
 
 # Table of Contents
 
-* [ubuntu\-securityonion\-openvpn](#ubuntu-securityonion-openvpn)
 * [Overview](#overview)
 * [Server Machine Setup](#server-machine-setup)
     * [Internal Client Diagram](#internal-client-diagram)
