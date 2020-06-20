@@ -41,8 +41,23 @@ all traffic on its interface to the IDS machine over that VPN (and do so securel
 
 Server setup:
 * Start with Ubuntu 16.04
-* Install Security Onion
-* Install OpenVPN
+* Install and set up Security Onion
+* Set up networking
+* Install and set up OpenVPN server
+* Install and set up OpenVPN client
+* Start OpenVPN server
+
+Client setup:
+* Install software
+* Set up networking
+* Extract OpenVPN client files
+* Start OpenVPN client
+
+Testing:
+* Ensure ethernet traffic shows up on OpenVPN tunnel on client
+* Ensure bridge traffic shows up on OpenVPN tunnel on server
+* Ensure ethernet traffic on client (monitored) machine shows up
+  in OpenVPN tunnel on server
 
 
 # Server Machine Setup
