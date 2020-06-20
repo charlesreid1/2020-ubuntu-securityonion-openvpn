@@ -3,15 +3,33 @@
 Guide to setting up a Security Onion IDS server that lives in the cloud and receives
 a copy of all traffic to and from the monitored machine via an OpenVPN connection.
 
-# Diagram
+# Table of Contents
 
-## Internal Client Diagram
-
-![Internal Security Onion client diagram](img/InternalDiagram_Client.jpg)
-
-## Internal Security Onion Server Diagram
-
-![Internal Security Onion server diagram](img/InternalDiagram_Server.jpg)
+* [ubuntu\-securityonion\-openvpn](#ubuntu-securityonion-openvpn)
+* [Overview](#overview)
+* [Server Machine Setup](#server-machine-setup)
+    * [Internal Client Diagram](#internal-client-diagram)
+    * [Creating Nonroot User](#creating-nonroot-user)
+    * [Setting Up Unix Firewall ufw](#setting-up-unix-firewall-ufw)
+    * [Install Security Onion](#install-security-onion)
+    * [Setup Security Onion](#setup-security-onion)
+    * [Install OpenVPN](#install-openvpn)
+    * [Setup OpenVPN Server](#setup-openvpn-server)
+    * [Configure OpenVPN Server](#configure-openvpn-server)
+    * [Setup OpenVPN Client](#setup-openvpn-client)
+    * [Configure OpenVPN Client](#configure-openvpn-client)
+    * [Start VPN Server](#start-vpn-server)
+* [Client Machine Setup](#client-machine-setup)
+    * [Internal Security Onion Server Diagram](#internal-security-onion-server-diagram)
+    * [Install Required Software](#install-required-software)
+    * [Enable Packet Forwarding](#enable-packet-forwarding)
+    * [OpenVPN](#openvpn)
+        * [Setup OpenVPN Scripts](#setup-openvpn-scripts)
+        * [Extract OpenVPN Files](#extract-openvpn-files)
+        * [Start OpenVPN Client](#start-openvpn-client)
+        * [Start OpenVPN from Command Line](#start-openvpn-from-command-line)
+        * [Start OpenVPN as a Service](#start-openvpn-as-a-service)
+    * [How it works](#how-it-works)
 
 # Overview
 
@@ -33,6 +51,11 @@ Server setup:
 This section describes the steps for setting up the IDS server,
 which also runs an OpenVPN server, and connects the virtual tap device that
 the OpenVPN server creates to an ethernet bridge device.
+
+
+## Internal Client Diagram
+
+![Internal Security Onion client diagram](img/InternalDiagram_Client.jpg)
 
 
 ## Creating Nonroot User
@@ -501,6 +524,11 @@ This machine will run daemonlogger to mirror traffic from the main ethernet inte
 onto a new virtual device. This machine will also run an OpenVPN client, and will
 connect the OpenVPN virtual tap with the daemonlogger virtual interface via an
 ethernet bridge.
+
+
+## Internal Security Onion Server Diagram
+
+![Internal Security Onion server diagram](img/InternalDiagram_Server.jpg)
 
 
 ## Install Required Software
