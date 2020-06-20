@@ -1,20 +1,30 @@
 # ubuntu-securityonion-openvpn
 
-Guide to setting up a SecurityOnion IDS server that receives forwarded traffic from
-the monitored machine over an OpenVPN connection.
+Guide to setting up a Security Onion IDS server that lives in the cloud and receives
+a copy of all traffic to and from the monitored machine via an OpenVPN connection.
+
+# Diagram
+
+## Internal Client Diagram
+
+![Internal Security Onion client diagram](img/InternalDiagram_Client.jpg)
+
+## Internal Security Onion Server Diagram
+
+![Internal Security Onion server diagram](img/InternalDiagram_Server.jpg)
 
 # Overview
 
 The goal of this guide is to have an IDS that can be hooked up to multiple machines
 and used to remotely monitor traffic going to/from the machine.
 
-To achieve this, we cover setting up an IDS server running the SecurityOnion distro,
+To achieve this, we cover setting up an IDS server running the Security Onion distro,
 setting up a VPN network using OpenVPN, and configuring the monitored machine to forward
 all traffic on its interface to the IDS machine over that VPN (and do so securely).
 
 Server setup:
 * Start with Ubuntu 16.04
-* Install SecurityOnion
+* Install Security Onion
 * Install OpenVPN
 
 
@@ -72,9 +82,9 @@ sudo ufw --force enable
 ```
 
 
-## Install SecurityOnion
+## Install Security Onion
 
-Steps to install SecurityOnion:
+Steps to install Security Onion:
 
 Install all Ubuntu updates and reboot:
 
@@ -100,7 +110,7 @@ Install `software-properties-common`:
 sudo apt -y install software-properties-common
 ```
 
-Add SecurityOnion PPA:
+Add Security Onion PPA:
 
 ```
 sudo add-apt-repository -y ppa:securityonion/stable
@@ -118,7 +128,7 @@ Install `securityonion-all` package:
 sudo apt -y install securityonion-all syslog-ng-core
 ```
 
-Install `salt` to manage the SecurityOnion installation:
+Install `salt` to manage the Security Onion installation:
 
 ```
 sudo apt -y install securityonion-onionsalt
@@ -131,7 +141,7 @@ sudo soup
 ```
 
 
-## Setup SecurityOnion
+## Setup Security Onion
 
 Ensure `bridge-utils` is installed:
 
@@ -407,7 +417,7 @@ up "/etc/openvpn/up.sh"
 down "/etc/openvpn/down.sh"
 ```
 
-(Note: subsitute IP address of SecurityOnion server for `<ip-addr>`)
+(Note: subsitute IP address of Security Onion server for `<ip-addr>`)
 
 (Note: this will require the up.sh/down.sh scripts to be present on each client.)
 
