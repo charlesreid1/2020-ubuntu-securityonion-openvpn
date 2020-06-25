@@ -1,4 +1,4 @@
-# ubuntu-securityonion-openvpn
+# 2020-ubuntu-securityonion-openvpn
 
 Guide to setting up a Security Onion IDS server that lives in the cloud and receives
 a copy of all traffic to and from the monitored machine via an OpenVPN connection.
