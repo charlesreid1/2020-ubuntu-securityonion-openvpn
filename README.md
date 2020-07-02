@@ -7,7 +7,7 @@ a copy of all traffic to and from the monitored machine via an OpenVPN connectio
 
 * [Overview](#overview)
 * [Server Machine Setup](#server-machine-setup)
-    * [Internal Client Diagram](#internal-client-diagram)
+    * [Internal Server Diagram](#internal-server-diagram)
     * [Creating Nonroot User](#creating-nonroot-user)
     * [Setting Up Unix Firewall ufw](#setting-up-unix-firewall-ufw)
     * [Install Security Onion](#install-security-onion)
@@ -19,7 +19,7 @@ a copy of all traffic to and from the monitored machine via an OpenVPN connectio
     * [Configure OpenVPN Client](#configure-openvpn-client)
     * [Start VPN Server](#start-vpn-server)
 * [Client Machine Setup](#client-machine-setup)
-    * [Internal Security Onion Server Diagram](#internal-security-onion-server-diagram)
+    * [Internal Client Diagram](#internal-client-diagram)
     * [Install Required Software](#install-required-software)
     * [Enable Packet Forwarding](#enable-packet-forwarding)
     * [OpenVPN](#openvpn)
@@ -67,9 +67,9 @@ which also runs an OpenVPN server, and connects the virtual tap device that
 the OpenVPN server creates to an ethernet bridge device.
 
 
-## Internal Client Diagram
+## Internal Server Diagram
 
-![Internal Security Onion client diagram](img/InternalDiagram_Client.jpg)
+![Internal Security Onion client diagram](img/InternalDiagram_Server.jpg)
 
 
 ## Creating Nonroot User
@@ -540,9 +540,9 @@ connect the OpenVPN virtual tap with the daemonlogger virtual interface via an
 ethernet bridge.
 
 
-## Internal Security Onion Server Diagram
+## Internal Client Diagram
 
-![Internal Security Onion server diagram](img/InternalDiagram_Server.jpg)
+![Internal client diagram](img/InternalDiagram_Client.jpg)
 
 
 ## Install Required Software
